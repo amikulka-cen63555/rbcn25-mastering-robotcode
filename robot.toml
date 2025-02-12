@@ -2,3 +2,12 @@ paths = "."
 includes = ["tag1"]
 
 variables = { "A_VAR"="a value", "B_VAR"="b_value" }
+
+[profiles.dev.variables]
+D_VAR = "abc"
+
+[profiles.dev.extend-variables]
+ANOTHER="def"
+
+[tool.robotcode-analyze.modifiers]
+ignore=["VariableNotFound"]

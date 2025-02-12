@@ -28,6 +28,11 @@ Third
     Log  ${dir}
     Do Something  with=and argument
 
+Skip
+    This is not a keyword  # robotcode: ignore
+    This is not a keyword  ${adawdaadw}  # robotcode: ignore[KeywordNotFound]
+    This is not a keyword  ${adawdaadw}  # robotcode: ignore[KeywordNotFound, VariableNotFound]
+
 
 *** Keywords ***
 Do Something
