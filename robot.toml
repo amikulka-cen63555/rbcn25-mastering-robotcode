@@ -1,0 +1,27 @@
+paths = "tests"
+
+[metadata]
+"ci run" = { expr = "environ.get('CI', 'unknown')" }
+"architecture" = { expr = "platform.architecture()" }
+"python-version" = { expr = "platform.python_version()" }
+
+[profiles.headless]
+#variables = { "HEADLESS" = "On" }
+extend-variables.HEADLESS = "On"
+hidden=true
+
+[profiles.headfull]
+
+[profiles.headfull.extend-variables]
+HEADLESS = "Off"
+
+[profiles.test.extend-variables]
+APP_URL = "localhost:3000"
+
+[profiles.dev.extend-variables]
+APP_URL = "localhost:3001"
+
+[profiles.dev_headless]
+inherits = ["dev", "headless"]
+
+[profiles.ci]

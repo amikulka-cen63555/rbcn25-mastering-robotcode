@@ -1,0 +1,69 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "demoproject"
+dynamic = ["version"]
+description = ''
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "Adam Mikulka", email = "108277098+amikulka-cen63555@users.noreply.github.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+  "robotframework", "robotframework-browser"
+]
+
+[project.urls]
+Documentation = "https://github.com/Adam Mikulka/demoproject#readme"
+Issues = "https://github.com/Adam Mikulka/demoproject/issues"
+Source = "https://github.com/Adam Mikulka/demoproject"
+
+[tool.hatch.version]
+path = "src/demoproject/__about__.py"
+
+[tool.hatch.envs.default]
+dependencies=["robotframework-tidy","robotframework-robocop"]
+post-install-commands = [
+  "rfbrowser init"
+]
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/demoproject tests}"
+
+[tool.coverage.run]
+source_pkgs = ["demoproject", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/demoproject/__about__.py",
+]
+
+[tool.coverage.paths]
+demoproject = ["src/demoproject", "*/demoproject/src/demoproject"]
+tests = ["tests", "*/demoproject/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]

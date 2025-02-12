@@ -1,0 +1,5 @@
+[extend-profiles.my_profile]
+variables.MY_VAR="123"
+
+[extend-profiles.headless]
+extend-variables.HEADLESS = "Off"

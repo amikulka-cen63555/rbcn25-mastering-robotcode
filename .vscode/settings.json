@@ -1,0 +1,9 @@
+{
+    "python.experiments.optOutFrom": [
+        "pythonTerminalEnvVarActivation"
+    ],
+    "robotcode.profiles": [
+        "headfull",
+        "test"
+    ]
+}
