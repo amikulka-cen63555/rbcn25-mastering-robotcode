@@ -1,0 +1,4 @@
+paths = "."
+includes = ["tag1"]
+
+variables = { "A_VAR"="a value", "B_VAR"="b_value" }

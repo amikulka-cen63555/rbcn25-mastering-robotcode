@@ -1,0 +1,11 @@
+{
+    "robotcode.run.openOutputAfterRun": "log",
+    "debugpy.debugJustMyCode": false,
+    "robotcode.debug.attachPython": true,
+    "robotcode.robot.env": {
+        "A_ENV_VAR": "123"
+    },
+    "python.experiments.optOutFrom": [
+        "pythonTerminalEnvVarActivation"
+    ]
+}
